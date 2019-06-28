@@ -1,25 +1,28 @@
 extends Node
 class_name Perceptron
 
-const learning_rate = 0.01
-
+var learning_rate
 var weights = []
 
-func _init(n: int):
+func _init(n: int, learning_rate_: float):
+	learning_rate = learning_rate_
 	randomize()
 	for i in range(n):
 		# random weights between -1 and 1
-		weights.push_back(randf() * 2 - 1)
+		weights.push_back(rand_range(-1, 1))
 
-func compute(values : Array):
-	var result = 0
-	for i in weights.size():
-		result += weights[i] * values[i]
-	return sign(result)
+func compute(inputs : Array):
+	var sum = 0
+	for i in range(weights.size()):
+		sum += inputs[i] * weights[i]
 
-func train(values: Array, target: int):
-	var result = compute(values)
-	var error = target - result
+	return 1 if sum > 0 else -1
 
-	for i in weights.size():
-		weights[i] = lerp(weights[i], weights[i] + error * values[i], learning_rate)
+func train(inputs: Array, target: int):
+	var guess = compute(inputs)
+	var error = target - guess
+	
+	for i in range(weights.size()):
+		weights[i] += error * inputs[i] * learning_rate
+		
+	return error
