@@ -11,7 +11,7 @@ func _ready():
 	randomize()
 	var pointScene = preload("res://Point.tscn")
 	# 3 weights : x, y, bias
-	perceptron = Perceptron.new(3, 0.000001)
+	perceptron = Perceptron.new(3, 0.001)
 	
 	for i in range(500):
 		var point = pointScene.instance()
