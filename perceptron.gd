@@ -1,11 +1,11 @@
 extends Node
 class_name Perceptron
 
-var learning_rate
+var learning_rates
 var weights = []
 
-func _init(n: int, learning_rate_: float):
-	learning_rate = learning_rate_
+func _init(n: int, learning_rates_: Array):
+	learning_rates = learning_rates_
 	randomize()
 	for i in range(n):
 		# random weights between -1 and 1
@@ -23,6 +23,6 @@ func train(inputs: Array, target: int):
 	var error = target - guess
 	
 	for i in range(weights.size()):
-		weights[i] += error * inputs[i] * learning_rate
+		weights[i] += error * inputs[i] * learning_rates[i]
 		
 	return error
