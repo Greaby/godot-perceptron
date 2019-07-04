@@ -5,6 +5,7 @@ var learning_rates
 var weights = []
 
 func _init(n: int, learning_rates_: Array):
+	assert(learning_rates_.size() == n)
 	learning_rates = learning_rates_
 	randomize()
 	for i in range(n):
@@ -12,6 +13,7 @@ func _init(n: int, learning_rates_: Array):
 		weights.push_back(rand_range(-1, 1))
 
 func compute(inputs : Array):
+	assert(inputs.size() == weights.size())
 	var sum = 0
 	for i in range(weights.size()):
 		sum += inputs[i] * weights[i]
