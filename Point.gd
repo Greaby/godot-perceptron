@@ -1,18 +1,24 @@
 extends Node2D
 
-var type = 0
-var error = 2
+var value: int = 1
+var error: int = 3
 
-func _process(delta):
+func _process(delta: float) -> void:
 	update()
 
-func _draw():
-	if(type == 1):
-		draw_circle(Vector2(), 8, Color(255, 255, 255))
+
+func _draw() -> void:
+	if error == 3:
+		draw_circle(Vector2(), 8, Color.darkorange)
+	elif error == 0:
+		draw_circle(Vector2(), 8, Color.green)
 	else:
-		draw_circle(Vector2(), 8, Color(0, 0, 0))
-		
-	if(error == 0):
-		draw_circle(Vector2(), 4, Color(0, 255, 0))
+		draw_circle(Vector2(), 8, Color.red)
+	
+	
+	if value == 1:
+		draw_circle(Vector2(), 6, Color.white)
 	else:
-		draw_circle(Vector2(), 4, Color(255, 0, 0))
+		draw_circle(Vector2(), 6, Color.black)
+	
+	
