@@ -1,4 +1,3 @@
-extends Node
 class_name Perceptron
 
 var learning_rate: float
