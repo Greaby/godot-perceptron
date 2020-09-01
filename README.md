@@ -1,7 +1,7 @@
 # Perceptron - Godot Engine
 
 The perceptron, also known as a neuron, is used in machine learning as the building block of a neural network.
-It is used to classify the results of a linear equation.
+It is used to classify the results of linerarly separable problems.
 
 It receives several inputs and returns a value at the output.
 
