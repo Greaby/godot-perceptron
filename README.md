@@ -7,6 +7,10 @@ It receives several inputs and returns a value at the output.
 
 In this example, the perceptron tries to find the boundary between black and white points in a 2d plane.
 
+See also my projects :
+- [godot-neural-network](https://github.com/Greaby/godot-neural-network)
+- [godot-neuroevolution](https://github.com/Greaby/godot-neuroevolution)
+
 ## How to use
 
 You can instantiate a new perceptron with its number of inputs and its learning rate.
