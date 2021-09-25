@@ -30,3 +30,11 @@ To get the perceptron result use :
 ```gdscript
 var result = my_perceptron.compute([INPUT_1, INPUT_X...])
 ```
+
+## Dependencies
+
+This project require Godot Engine 3.3.
+
+## Licenses
+
+-   The source code is available under the MIT license.
